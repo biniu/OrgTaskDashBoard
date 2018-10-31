@@ -1,0 +1,93 @@
+
+* TODO [#B] TEST_PROJECT
+  :PROPERTIES:
+  :CREATED:  <2018-10-10 śro 12:07>
+  :ID:       9fffbef3-173b-4de2-b7ab-a53e0bf48626
+  :END:
+** TODO [#D] test_task_1
+   :PROPERTIES:
+   :CREATED:  <2018-10-10 śro 12:28>
+   :ID:       17b1ad1a-e5e8-4661-b97a-9740a0c18134
+   :END:
+** TODO [#C] test_task_2
+   DEADLINE: <2018-10-15 pon>
+   :PROPERTIES:
+   :CREATED:  <2018-10-10 śro 12:28>
+   :ID:       a86728d2-ad31-49cd-91bd-88c290677f2a
+   :END:
+** TODO [#A] test_task_3
+   :PROPERTIES:
+   :CREATED:  <2018-10-10 śro 12:29>
+   :ID:       0b7079a7-c42f-483b-a647-9f9d543265e5
+   :END:
+*** TODO test_sub_task_1
+    SCHEDULED: <2018-11-22 czw>
+   :PROPERTIES:
+   :CREATED:  <2018-10-10 śro 12:29>
+   :ID:       ae3e2cec-1bf4-453b-8375-d4c4a7e57771
+   :END:
+*** TODO [#A] test_sub_task_2a
+    DEADLINE: <2018-10-19 pią>
+    :PROPERTIES:
+    :CREATED:  <2018-10-10 śro 12:29>
+    :ID:       54466717-f316-43e2-b4a1-70d5539d6d83
+    :END:
+**** TODO [#A] test_Sub_task_1
+     DEADLINE: <2018-10-16 wto>
+     :PROPERTIES:
+     :CREATED:  <2018-10-10 śro 12:29>
+     :ID:       ea15f614-7240-4bcb-801d-cb24e8093a69
+     :END:
+***** TODO test_sub_sub_sub_task_1
+      SCHEDULED: <2018-11-16 pią>
+      :PROPERTIES:
+      :CREATED:  <2018-10-10 śro 12:30>
+      :ID:       05716185-b29d-4bad-b832-8a48a092faf0
+      :END:
+***** TODO test_sub_sub_sub_task_2
+      :PROPERTIES:
+      :CREATED:  <2018-10-10 śro 12:30>
+      :ID:       5e78562b-2bb2-44a6-9f51-fd68bd47e25c
+      :END:
+**** TODO [#D] test_sub_sub_task_2
+     :PROPERTIES:
+     :CREATED:  <2018-10-10 śro 12:30>
+     :ID:       90fde36d-393a-436c-b3d8-4a46af0014c9
+     :END:
+**** DONE [#B] test_sub_sub_task_3
+     :PROPERTIES:
+     :CREATED:  <2018-10-10 śro 12:30>
+     :ID:       4cbe2571-a64e-4708-b482-b4d864938960
+     :END:
+*** TODO test_sub_task_3
+    :PROPERTIES:
+    :CREATED:  <2018-10-10 śro 12:31>
+    :ID:       5f431613-941a-4872-9232-f85379ee8fda
+    :END:
+** TODO [#A] test_task_4
+   :PROPERTIES:
+   :ID:       3e022bfd-7c92-4911-8ec7-54c81474e065
+   :END:
+** TODO test_task_5
+   SCHEDULED: <2018-10-22 pon>
+   :PROPERTIES:
+   :ID:       6a11fd79-40ca-4fc8-a0c3-eeec5085ba6e
+   :END:
+
+* TODO [#A] TEST_PROJECT_2
+   :PROPERTIES:
+   :CREATED:  <2018-10-10 śro 12:31>
+   :ID:       ef33c4a0-34dd-4ce0-836e-fa35b25be97d
+   :END:
+** TODO test_task_1
+   SCHEDULED: <2018-10-17 śro> DEADLINE: <2018-11-21 śro>
+   :PROPERTIES:
+   :CREATED:  <2018-10-10 śro 12:32>
+   :ID:       25b044c9-0e29-42cf-a5e1-fe4ae9cce419
+   :END:
+** TODO test_task_2
+   DEADLINE: <2018-11-22 czw> SCHEDULED: <2018-11-13 wto>
+   :PROPERTIES:
+   :CREATED:  <2018-10-10 śro 12:32>
+   :ID:       3ee03e4c-c42f-48dc-a16c-f55228eec9b0
+   :END:
