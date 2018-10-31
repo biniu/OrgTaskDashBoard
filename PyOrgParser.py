@@ -63,6 +63,17 @@ class PyOrgParser():
 
         return out
 
+    def get_task_creation_date(self, elem):
+        out = None
+        reg = r":CREATED:\s+\<\d+-\d+-\d+\s+\w+\s+\d+:\d+\>"
+        match = re.search(reg, elem)
+        if match:
+            tmp_out = re.sub(r'\s+\w+\s+', ' ', match.group())
+            out = datetime.strptime(tmp_out,
+                                    ':CREATED: <%Y-%m-%d %I:%M>')
+
+        return out
+
     def __parse_org_file(self, org_file_path):
         del self.org_file_raw_list[:]
         with open(org_file_path) as of:
