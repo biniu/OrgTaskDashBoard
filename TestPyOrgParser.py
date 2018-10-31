@@ -35,8 +35,13 @@ class TestPyOrgParser(unittest.TestCase):
                          self.TASK_NUMBER)
 
     def test_get_task_name(self):
-
         self.assertEqual(self.test_class.get_task_name(
             self.TASK_ENTRIES[0]), 'test_task_1')
         self.assertEqual(self.test_class.get_task_name(
             self.TASK_ENTRIES[1]), 'TEST_PROJECT_2')
+
+    def test_get_task_priority(self):
+        self.assertEqual(self.test_class.get_task_priority(
+            self.TASK_ENTRIES[0]), None)
+        self.assertEqual(self.test_class.get_task_priority(
+            self.TASK_ENTRIES[1]), 'A')

@@ -18,8 +18,8 @@ class PyOrgParser():
         return len(self.org_file_raw_list)
 
     def get_task_name(self, elem):
-        out = ''
-        reg= r"%s(.*?)(\:PROPERTIES\:|DEADLINE\:|SCHEDULED\:)"\
+        out = None
+        reg = r"%s(.*?)(\:PROPERTIES\:|DEADLINE\:|SCHEDULED\:)"\
             % (self.TASK_STATE_R)
         match = re.search(reg, elem)
         if match:
@@ -27,6 +27,18 @@ class PyOrgParser():
             # Remove task priority
             out = re.sub(r'\[#[A-Z]\]', '', out)
             out = out.lstrip(' ').rstrip(' ')
+        return out
+
+    def get_task_priority(self, elem):
+        out = None
+        reg = r"\[#[A-Z]\]"
+        print(elem)
+        match = re.search(reg, elem)
+        if match:
+            print('DUPAAA')
+            out = match.group().replace(
+                '[', '').replace(']', '').replace('#', '')
+
         return out
 
     def __parse_org_file(self, org_file_path):
