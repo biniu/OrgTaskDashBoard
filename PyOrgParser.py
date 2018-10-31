@@ -1,8 +1,21 @@
 
 import re
-
+from datetime import datetime
 
 class PyOrgParser():
+
+    task_entry = {
+        'level',
+        'status',
+        'priority',    # DONE
+        'task',        # DONE
+        'tags',
+        'deadline',
+        'created',
+        'id',
+        'parent',
+        'childes',
+    }
 
     TASK_STATE_R = '(TODO|DONE)'
 
@@ -32,12 +45,21 @@ class PyOrgParser():
     def get_task_priority(self, elem):
         out = None
         reg = r"\[#[A-Z]\]"
-        print(elem)
+
         match = re.search(reg, elem)
         if match:
-            print('DUPAAA')
             out = match.group().replace(
                 '[', '').replace(']', '').replace('#', '')
+
+        return out
+
+    def get_task_deadline(self, elem):
+        out = None
+        reg = r"DEADLINE:\s+\<\d+-\d+-\d+"
+        match = re.search(reg, elem)
+        if match:
+            out = datetime.strptime(match.group(),
+                                    'DEADLINE: <%Y-%m-%d')
 
         return out
 

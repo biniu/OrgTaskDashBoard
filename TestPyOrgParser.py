@@ -2,6 +2,8 @@
 
 import unittest
 
+from datetime import datetime
+
 from PyOrgParser import PyOrgParser
 
 
@@ -45,3 +47,11 @@ class TestPyOrgParser(unittest.TestCase):
             self.TASK_ENTRIES[0]), None)
         self.assertEqual(self.test_class.get_task_priority(
             self.TASK_ENTRIES[1]), 'A')
+
+    def test_get_deadline(self):
+        # 2018-11-21
+        test_date = datetime.strptime('2018-11-21', '%Y-%m-%d')
+        self.assertEqual(self.test_class.get_task_deadline(
+            self.TASK_ENTRIES[0]), test_date)
+        self.assertEqual(self.test_class.get_task_deadline(
+            self.TASK_ENTRIES[1]), None)
