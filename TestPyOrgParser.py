@@ -48,7 +48,7 @@ class TestPyOrgParser(unittest.TestCase):
         self.assertEqual(self.test_class.get_task_priority(
             self.TASK_ENTRIES[1]), 'A')
 
-    def test_get_deadline(self):
+    def test_get_task_deadline(self):
         # 2018-11-21
         test_date = datetime.strptime('2018-11-21', '%Y-%m-%d')
         self.assertEqual(self.test_class.get_task_deadline(
@@ -56,7 +56,7 @@ class TestPyOrgParser(unittest.TestCase):
         self.assertEqual(self.test_class.get_task_deadline(
             self.TASK_ENTRIES[1]), None)
 
-    def test_get_deadline(self):
+    def test_get_task_creationdate(self):
         # 2018-10-10 12:32
         test_date_1 = \
             datetime.strptime('2018-10-10 12:32', '%Y-%m-%d %I:%M')
@@ -66,3 +66,12 @@ class TestPyOrgParser(unittest.TestCase):
             self.TASK_ENTRIES[0]), test_date_1)
         self.assertEqual(self.test_class.get_task_creation_date(
             self.TASK_ENTRIES[1]), test_date_2)
+
+    def test_get_task_id(self):
+        ID_1 = '25b044c9-0e29-42cf-a5e1-fe4ae9cce419'
+        ID_2 = 'ef33c4a0-34dd-4ce0-836e-fa35b25be97d'
+
+        self.assertEqual(self.test_class.get_task_id(
+            self.TASK_ENTRIES[0]), ID_1)
+        self.assertEqual(self.test_class.get_task_id(
+            self.TASK_ENTRIES[1]), ID_2)

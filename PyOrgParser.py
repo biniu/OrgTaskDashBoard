@@ -2,19 +2,20 @@
 import re
 from datetime import datetime
 
+
 class PyOrgParser():
 
     task_entry = {
-        'level',
-        'status',
+        'level',       # TODO
+        'status',      # TODO
         'priority',    # DONE
         'task',        # DONE
-        'tags',
-        'deadline',
-        'created',
-        'id',
-        'parent',
-        'childes',
+        'tags',        # TODO
+        'deadline',    # DONE
+        'created',     # DONE
+        'id',          # TODO
+        'parent',      # TODO
+        'childes',     # TODO
     }
 
     TASK_STATE_R = '(TODO|DONE)'
@@ -71,6 +72,16 @@ class PyOrgParser():
             tmp_out = re.sub(r'\s+\w+\s+', ' ', match.group())
             out = datetime.strptime(tmp_out,
                                     ':CREATED: <%Y-%m-%d %I:%M>')
+
+        return out
+
+    def get_task_id(self, elem):
+        out = None
+        reg = r"\:ID\:\s+([0-9a-zA-Z]+\-)+([0-9a-zA-Z]+)"
+        match = re.search(reg, elem)
+        if match:
+            out = match.group().replace(':ID:', '').lstrip(
+                ' ').rstrip(' ')
 
         return out
 
