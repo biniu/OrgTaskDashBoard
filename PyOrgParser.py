@@ -13,7 +13,7 @@ class PyOrgParser():
         'tags',        # TODO
         'deadline',    # DONE
         'created',     # DONE
-        'id',          # TODO
+        'id',          # DONE
         'parent',      # TODO
         'childes',     # TODO
     }
@@ -41,6 +41,15 @@ class PyOrgParser():
             # Remove task priority
             out = re.sub(r'\[#[A-Z]\]', '', out)
             out = out.lstrip(' ').rstrip(' ')
+        return out
+
+    def get_task_state(self, elem):
+        out = None
+        reg = r"%s" % self.TASK_STATE_R
+        match = re.search(reg, elem)
+        if match:
+            out = match.group()
+
         return out
 
     def get_task_priority(self, elem):
