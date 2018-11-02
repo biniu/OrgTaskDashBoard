@@ -63,6 +63,17 @@ class PyOrgParser():
 
         return out
 
+    def get_task_level(self, elem):
+        out = None
+        reg = r"^\*+"
+
+        match = re.search(reg, elem)
+        if match:
+            tmp_out = match.group()
+            out = len(tmp_out)
+        return out
+
+
     def get_task_deadline(self, elem):
         out = None
         reg = r"DEADLINE:\s+\<\d+-\d+-\d+"
