@@ -88,7 +88,7 @@ class TestPyOrgParser(unittest.TestCase):
         self.assertEqual(self.test_class.get_task_state(
             self.TASK_ENTRIES[1]), STATE_2)
 
-    def test_get_task_state(self):
+    def test_get_task_level(self):
         LEVEL_1 = 2
         LEVEL_2 = 1
 
@@ -96,3 +96,12 @@ class TestPyOrgParser(unittest.TestCase):
             self.TASK_ENTRIES[0]), LEVEL_1)
         self.assertEqual(self.test_class.get_task_level(
             self.TASK_ENTRIES[1]), LEVEL_2)
+
+    def test_get_task_tags(self):
+        TAGS_1 = ['PRJ_2', 'TASK_1']
+        TAGS_2 = ['PRJ_2']
+
+        self.assertEqual(self.test_class.get_task_tags(
+            self.TASK_ENTRIES[0]), TAGS_1)
+        self.assertEqual(self.test_class.get_task_tags(
+            self.TASK_ENTRIES[1]), TAGS_2)

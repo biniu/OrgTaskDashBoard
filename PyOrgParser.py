@@ -10,7 +10,7 @@ class PyOrgParser():
         'status',      # DONE
         'priority',    # DONE
         'task',        # DONE
-        'tags',        # TODO
+        'tags',        # DONE
         'deadline',    # DONE
         'created',     # DONE
         'id',          # DONE
@@ -53,6 +53,25 @@ class PyOrgParser():
 
         return out
 
+    def get_task_tags(self, elem):
+        out = None
+        reg = r"((\:(.*?)\:)+(.*?)\:|(\:(.*?)\:))"
+
+        elem = elem[:elem.find('PROPERTIES') + 1]
+        elem = elem[:elem.find('DEADLINE')]
+        elem = elem[:elem.find('SCHEDULED')]
+
+        match = re.search(reg, elem)
+        if match:
+            tmp_out = match.group()
+            if tmp_out.startswith(':'):
+                tmp_out = tmp_out[1:]
+            if tmp_out.endswith(':'):
+                tmp_out = tmp_out[:-1]
+            out = tmp_out.split(':')
+
+        return out
+
     def get_task_priority(self, elem):
         out = None
         reg = r"\[#[A-Z]\]"
@@ -70,8 +89,8 @@ class PyOrgParser():
 
         match = re.search(reg, elem)
         if match:
-            tmp_out = match.group()
-            out = len(tmp_out)
+            out = len(match.group())
+
         return out
 
 
