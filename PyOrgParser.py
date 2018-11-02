@@ -21,6 +21,7 @@ class PyOrgParser():
     TASK_STATE_R = '(TODO|DONE)'
 
     org_file_raw_list = []
+    task_list = []
 
     def __init__(self, org_file_path):
         self.__parse_org_file(org_file_path)
@@ -33,7 +34,6 @@ class PyOrgParser():
 
     def get_task_name(self, elem):
         out = None
-#        reg = r"%s(.*?)(\:PROPERTIES\:|DEADLINE\:|SCHEDULED\:)"\
         reg = r"%s(.*?)\:"\
             % (self.TASK_STATE_R)
         match = re.search(reg, elem)
@@ -125,6 +125,36 @@ class PyOrgParser():
 
         return out
 
+    def get_task(self, elem):
+        return {
+                'level': self.get_task_level(elem),
+                'status': self.get_task_state(elem),
+                'priority': self.get_task_priority(elem),
+                'task': self.get_task_name(elem),
+                'tags': self.get_task_tags(elem),
+                'deadline': self.get_task_deadline(elem),
+                'created': self.get_task_creation_date(elem),
+#                'id': self.get_task_id(elem),
+#                'parent',
+                'childs': []
+            }
+
+    def get_struct(self):
+        tmp_level = 1
+        previous_level = 1
+        for elem in self.org_file_raw_list:
+            tmp_level = self.get_task_level(elem)
+            if tmp_level == previous_level:
+                self.task_list.append(self.get_task(elem))
+            if tmp_level < previous_level:
+                self.task_list[-1]['childs'].append(self.get_task(elem))
+
+            previous_level = tmp_level
+
+        for elem in self.task_list:
+            print('*' * elem['level'] + elem['task'] )
+            print(elem['childs'])
+
     def __parse_org_file(self, org_file_path):
         del self.org_file_raw_list[:]
         with open(org_file_path) as of:
@@ -140,3 +170,8 @@ class PyOrgParser():
             self.org_file_raw_list.append(tmp_entry)
             self.org_file_raw_list = \
                 list(filter(None, self.org_file_raw_list))
+
+if __name__ == '__main__':
+    tmp = PyOrgParser('TEST.org')
+
+    tmp.get_struct()
