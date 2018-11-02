@@ -6,8 +6,8 @@ from datetime import datetime
 class PyOrgParser():
 
     task_entry = {
-        'level',       # TODO
-        'status',      # TODO
+        'level',       # DONE
+        'status',      # DONE
         'priority',    # DONE
         'task',        # DONE
         'tags',        # TODO
@@ -33,7 +33,8 @@ class PyOrgParser():
 
     def get_task_name(self, elem):
         out = None
-        reg = r"%s(.*?)(\:PROPERTIES\:|DEADLINE\:|SCHEDULED\:)"\
+#        reg = r"%s(.*?)(\:PROPERTIES\:|DEADLINE\:|SCHEDULED\:)"\
+        reg = r"%s(.*?)\:"\
             % (self.TASK_STATE_R)
         match = re.search(reg, elem)
         if match:

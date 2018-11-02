@@ -14,16 +14,19 @@ class TestPyOrgParser(unittest.TestCase):
     TASK_NUMBER = 17
 
     TASK_ENTRIES = [
-        ("** TODO test_task_1   SCHEDULED: <2018-10-17 śro>"
-         " DEADLINE: <2018-11-21 śro>   :PROPERTIES:   :CREATED:"
-         "  <2018-10-10 śro 12:32>   "
-         ":ID:       25b044c9-0e29-42cf-a5e1-fe4ae9cce419   :END:"),
+        ("** TODO test_task_1"
+         "                                            :PRJ_2:TASK_1:"
+         "SCHEDULED: <2018-10-17 śro> DEADLINE: <2018-11-21 śro>"
+         ":PROPERTIES:"
+         ":CREATED:  <2018-10-10 śro 12:32>"
+         ":ID:       25b044c9-0e29-42cf-a5e1-fe4ae9cce419"
+         ":END:"),
         ("* TODO [#A] TEST_PROJECT_2"
+         "                                            :PRJ_2:"
          ":PROPERTIES:"
          ":CREATED:  <2018-10-10 śro 12:31>"
          ":ID:       ef33c4a0-34dd-4ce0-836e-fa35b25be97d"
-         ":END:"
-         ),
+         ":END:"),
     ]
 
     def setUp(self):

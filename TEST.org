@@ -4,7 +4,7 @@
   :CREATED:  <2018-10-10 śro 12:07>
   :ID:       9fffbef3-173b-4de2-b7ab-a53e0bf48626
   :END:
-** TODO [#D] test_task_1
+** TODO [#D] test_task_1                                       :PRJ_1:TASK_1:
    :PROPERTIES:
    :CREATED:  <2018-10-10 śro 12:28>
    :ID:       17b1ad1a-e5e8-4661-b97a-9740a0c18134
@@ -74,12 +74,12 @@
    :ID:       6a11fd79-40ca-4fc8-a0c3-eeec5085ba6e
    :END:
 
-* TODO [#A] TEST_PROJECT_2
+* TODO [#A] TEST_PROJECT_2                                            :PRJ_2:
    :PROPERTIES:
    :CREATED:  <2018-10-10 śro 12:31>
    :ID:       ef33c4a0-34dd-4ce0-836e-fa35b25be97d
    :END:
-** TODO test_task_1
+** TODO test_task_1                                            :PRJ_2:TASK_1:
    SCHEDULED: <2018-10-17 śro> DEADLINE: <2018-11-21 śro>
    :PROPERTIES:
    :CREATED:  <2018-10-10 śro 12:32>
