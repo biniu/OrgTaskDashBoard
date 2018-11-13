@@ -14,8 +14,7 @@ class PyOrgParser():
         'deadline',    # DONE
         'created',     # DONE
         'id',          # DONE
-        'parent',      # TODO
-        'childes',     # TODO
+        'parent',      # DONE
     }
 
     TASK_STATE_R = '(TODO|DONE)'
@@ -24,7 +23,8 @@ class PyOrgParser():
     task_list = []
 
     def __init__(self, org_file_path):
-        self.__parse_org_file(org_file_path)
+        self.org_file_path = org_file_path
+        self.__parse_org_file(self.org_file_path)
 
     def __del__(self):
         del self.org_file_raw_list[:]
@@ -41,6 +41,8 @@ class PyOrgParser():
             out = match.group(2)
             # Remove task priority
             out = re.sub(r'\[#[A-Z]\]', '', out)
+            out = re.sub(r'DEADLINE', '', out)
+            out = re.sub(r'SCHEDULED', '', out)
             out = out.lstrip(' ').rstrip(' ')
         return out
 
@@ -135,13 +137,12 @@ class PyOrgParser():
             'created': self.get_task_creation_date(elem),
             'id': self.get_task_id(elem),
             'parent_id': parent,
-            'childs': []
         }
 
     def get_parent(self, elem):
-        out = 'root'
+        out = self.org_file_path
         if self.get_task_level(elem) == 1:
-            return 'root'
+            return self.org_file_path
         else:
             _iter = len(self.task_list) - 1
             while _iter >= 0:
