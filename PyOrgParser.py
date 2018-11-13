@@ -93,7 +93,6 @@ class PyOrgParser():
 
         return out
 
-
     def get_task_deadline(self, elem):
         out = None
         reg = r"DEADLINE:\s+\<\d+-\d+-\d+"
@@ -125,35 +124,38 @@ class PyOrgParser():
 
         return out
 
-    def get_task(self, elem):
+    def get_task(self, elem, parent):
         return {
-                'level': self.get_task_level(elem),
-                'status': self.get_task_state(elem),
-                'priority': self.get_task_priority(elem),
-                'task': self.get_task_name(elem),
-                'tags': self.get_task_tags(elem),
-                'deadline': self.get_task_deadline(elem),
-                'created': self.get_task_creation_date(elem),
-#                'id': self.get_task_id(elem),
-#                'parent',
-                'childs': []
-            }
+            'level': self.get_task_level(elem),
+            'status': self.get_task_state(elem),
+            'priority': self.get_task_priority(elem),
+            'task': self.get_task_name(elem),
+            'tags': self.get_task_tags(elem),
+            'deadline': self.get_task_deadline(elem),
+            'created': self.get_task_creation_date(elem),
+            'id': self.get_task_id(elem),
+            'parent_id': parent,
+            'childs': []
+        }
+
+    def get_parent(self, elem):
+        out = 'root'
+        if self.get_task_level(elem) == 1:
+            return 'root'
+        else:
+            _iter = len(self.task_list) - 1
+            while _iter >= 0:
+                if self.get_task_level(elem) > self.task_list[_iter]['level']:
+                    return self.task_list[_iter]['id']
+                _iter -= 1
+        return out
 
     def get_struct(self):
-        tmp_level = 1
-        previous_level = 1
         for elem in self.org_file_raw_list:
-            tmp_level = self.get_task_level(elem)
-            if tmp_level == previous_level:
-                self.task_list.append(self.get_task(elem))
-            if tmp_level < previous_level:
-                self.task_list[-1]['childs'].append(self.get_task(elem))
+            self.task_list.append(self.get_task(
+                elem, self.get_parent(elem)))
 
-            previous_level = tmp_level
-
-        for elem in self.task_list:
-            print('*' * elem['level'] + elem['task'] )
-            print(elem['childs'])
+        return self.task_list
 
     def __parse_org_file(self, org_file_path):
         del self.org_file_raw_list[:]
@@ -171,7 +173,10 @@ class PyOrgParser():
             self.org_file_raw_list = \
                 list(filter(None, self.org_file_raw_list))
 
+
 if __name__ == '__main__':
     tmp = PyOrgParser('TEST.org')
 
-    tmp.get_struct()
+    tasks = tmp.get_struct()
+    for task in tasks:
+        print(task)
