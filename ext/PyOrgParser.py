@@ -126,7 +126,7 @@ class PyOrgParser():
 
         return out
 
-    def get_task(self, elem, parent):
+    def get_task_from_line(self, elem, parent):
         return {
             'level': self.get_task_level(elem),
             'status': self.get_task_state(elem),
@@ -153,10 +153,14 @@ class PyOrgParser():
 
     def get_struct(self):
         for elem in self.org_file_raw_list:
-            self.task_list.append(self.get_task(
+            self.task_list.append(self.get_task_from_line(
                 elem, self.get_parent(elem)))
 
         return self.task_list
+
+    def get_task(self, index):
+        print(self.task_list[index])
+        return self.task_list[index]
 
     def __parse_org_file(self, org_file_path):
         del self.org_file_raw_list[:]

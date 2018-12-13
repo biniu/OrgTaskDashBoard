@@ -241,3 +241,17 @@ class TestPyOrgParser(unittest.TestCase):
         ]
 
         self.assertEqual(test_date_struct, self.test_class.get_struct())
+
+    def test_get_task(self):
+        task_struct = {
+            'level': 2,
+            'status': 'TODO',
+            'priority': 'D',
+            'task': 'test_task_1',
+            'tags': ['PRJ_1', 'TASK_1'],
+            'deadline': None,
+            'created': datetime(2018, 10, 10, 0, 28),
+            'id': '17b1ad1a-e5e8-4661-b97a-9740a0c18134',
+            'parent_id': '9fffbef3-173b-4de2-b7ab-a53e0bf48626'
+        }
+        self.assertEqual(task_struct, self.test_class.get_task(1))
