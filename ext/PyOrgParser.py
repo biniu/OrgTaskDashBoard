@@ -1,4 +1,5 @@
 
+import os
 import re
 from datetime import datetime
 
@@ -22,8 +23,8 @@ class PyOrgParser():
     org_file_raw_list = []
     task_list = []
 
-    def __init__(self, org_file_path):
-        self.org_file_path = org_file_path
+    def __init__(self, org_file_path=None):
+        self.set_project_path(org_file_path)
         self.__parse_org_file(self.org_file_path)
 
     def __del__(self):
@@ -159,11 +160,28 @@ class PyOrgParser():
         return self.task_list
 
     def get_task(self, index):
-        print(self.task_list[index])
         return self.task_list[index]
+
+    def set_project_path(self, org_file_path):
+        self.org_file_path = org_file_path
+
+    def create_project(self, org_file_path):
+        self.set_project_path(org_file_path)
+        prj_name = self.org_file_path[self.org_file_path.rfind(
+            '/') + 1:].replace('.org', '')
+        prj_file = open(self.org_file_path, 'w+')
+        prj_file.write("* %s" % prj_name)
+
+        prj_file.close()
 
     def __parse_org_file(self, org_file_path):
         del self.org_file_raw_list[:]
+        if org_file_path is None:
+            return
+        if not os.path.isfile(org_file_path):
+            return
+            # self.create_project(org_file_path)
+
         with open(org_file_path) as of:
             self.org_file_raw = of.read()
 

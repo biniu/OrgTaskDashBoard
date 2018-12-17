@@ -1,6 +1,7 @@
 #!/bin/env python
 
 import unittest
+import os
 
 from datetime import datetime
 
@@ -10,7 +11,8 @@ from PyOrgParser import PyOrgParser
 class TestPyOrgParser(unittest.TestCase):
 
     test_class = None
-    MOCK_FILE = 'TEST.org'
+    MOCK_FILE = './TEST.org'
+    MOCK_FILE_2 = './TEST_2.org'
     TASK_NUMBER = 17
 
     TASK_ENTRIES = [
@@ -37,9 +39,13 @@ class TestPyOrgParser(unittest.TestCase):
 
     def setUp(self):
         self.test_class = PyOrgParser(self.MOCK_FILE)
+        self.test_class_prj = PyOrgParser()
 
     def tearDown(self):
         del self.test_class
+        del self.test_class_prj
+        if os.path.isfile(self.MOCK_FILE_2):
+            os.remove(self.MOCK_FILE_2)
 
     def test_get_task_number(self):
         self.assertEqual(self.test_class.get_task_number(),
@@ -52,7 +58,6 @@ class TestPyOrgParser(unittest.TestCase):
             self.TASK_ENTRIES[1]), 'TEST_PROJECT_2')
         self.assertEqual(self.test_class.get_task_name(
             self.TASK_ENTRIES[2]), 'test_task_2')
-
 
     def test_get_task_priority(self):
         self.assertEqual(self.test_class.get_task_priority(
@@ -142,7 +147,7 @@ class TestPyOrgParser(unittest.TestCase):
              'task': 'TEST_PROJECT', 'tags': None, 'deadline': None,
                 'created': datetime(2018, 10, 10, 0, 7),
                 'id': '9fffbef3-173b-4de2-b7ab-a53e0bf48626',
-                'parent_id': 'TEST.org'},
+                'parent_id': './TEST.org'},
             {'level': 2, 'status': 'TODO', 'priority': 'D',
              'task': 'test_task_1', 'tags': ['PRJ_1', 'TASK_1'],
              'deadline': None,
@@ -225,7 +230,7 @@ class TestPyOrgParser(unittest.TestCase):
              'deadline': None,
              'created': datetime(2018, 10, 10, 0, 31),
              'id': 'ef33c4a0-34dd-4ce0-836e-fa35b25be97d',
-             'parent_id': 'TEST.org'},
+             'parent_id': './TEST.org'},
             {'level': 2, 'status': 'TODO', 'priority': None,
              'task': 'test_task_1', 'tags': ['PRJ_2', 'TASK_1'],
              'deadline': datetime(2018, 11, 21, 0, 0),
@@ -255,3 +260,14 @@ class TestPyOrgParser(unittest.TestCase):
             'parent_id': '9fffbef3-173b-4de2-b7ab-a53e0bf48626'
         }
         self.assertEqual(task_struct, self.test_class.get_task(1))
+
+    def test_create_project(self):
+        prj_name = "TEST_2"
+        self.test_class_prj.create_project(self.MOCK_FILE_2)
+
+        self.assertTrue(os.path.isfile(self.MOCK_FILE_2))
+
+        with open(self.MOCK_FILE_2, 'r') as test_file:
+            test_data=test_file.read().replace('\n', '')
+
+        self.assertEqual(test_data, "* %s" % prj_name)
