@@ -7,7 +7,9 @@ from djongo import models
 class Project(models.Model):
     project_name = models.CharField(max_length=255)
     project_id = models.IntegerField(primary_key=True)
-    project_tags = models.ForeignKey('Tag')
+    project_tags = models.ForeignKey('Tag',
+                                     on_delete=models.SET_DEFAULT,
+                                     default='')
     file_path = models.CharField(max_length=255)
 
 
@@ -28,8 +30,12 @@ class Task(models.Model):
     task_level = models.IntegerField()
     # task_status = ???
     # task_priority =
-    task_tags = models.ForeignKey('Tag')
+    task_tags = models.ForeignKey('Tag',
+                                  on_delete=models.SET_DEFAULT,
+                                  default='')
     task_deadline = models.DateField()
     task_created = models.DateField()
     # task_parent = ???
-    task_project_id = models.ForeignKey('Project')
+    task_project_id = models.ForeignKey('Project',
+                                        on_delete=models.SET_DEFAULT,
+                                        default='')
