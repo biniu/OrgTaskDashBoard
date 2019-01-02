@@ -1,0 +1,148 @@
+* TODO REST API
+  :PROPERTIES:
+  :CREATED:  <2019-01-02 śro 14:27>
+  :ID:       f209692b-3474-412c-88e5-8ee23934ab0f
+  :END:
+** TODO Projects
+   :PROPERTIES:
+   :CREATED:  <2019-01-02 śro 14:31>
+   :ID:       414318c8-7e51-4004-97f4-bc4ba21cfe96
+   :END:
+*** TODO List projects
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       bc5a1c24-038a-4dce-b348-1e67578ad8d4
+    :END:
+*** TODO get project
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       821bb7f9-97b5-4778-8b1a-ddbb8da8234a
+    :END:
+*** TODO add project
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       f3edb4cd-5d28-48b8-b037-d8be62da4c5b
+    :END:
+*** TODO remove project
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       b691b998-8526-407a-a23a-c81de0a1016b
+    :END:
+*** TODO update project
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       58f2f141-e284-41b1-93c9-0d332653c6d0
+    :END:
+** TODO Tasks
+   :PROPERTIES:
+   :CREATED:  <2019-01-02 śro 14:31>
+   :ID:       ae75268d-1b30-41dd-954f-4aa92ebdc9b4
+   :END:
+*** TODO List tasks
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       fe45525a-3c11-49d6-be63-3858e51b8ca1
+    :END:
+*** TODO get task
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       ed59c826-c84a-4273-a9b4-c9f3aab47566
+    :END:
+*** TODO add task
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       c6b86423-6dd5-4abd-b25f-6698d31d9895
+    :END:
+*** TODO remove task
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       71056d30-bd56-4c45-9856-529fb0ab9d42
+    :END:
+*** TODO update task
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       e0491f1a-52d9-4154-b2ad-dca24dae22a0
+    :END:
+** TODO Tag
+   :PROPERTIES:
+   :CREATED:  <2019-01-02 śro 14:31>
+   :ID:       ba6564ce-c385-4e10-8d77-aebd97d4f9a7
+   :END:
+*** TODO List tags
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       a50c3b50-80e1-4078-88f5-e9c2670e68d5
+    :END:
+*** TODO get tag
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:31>
+    :ID:       1fc5b455-b967-4485-a713-34a08d9f081e
+    :END:
+*** TODO add tag
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       fdb993a4-162b-4324-b188-87be0f151d98
+    :END:
+*** TODO remove tag
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       59a8f7ba-1aa4-489e-802e-393e80b525d7
+    :END:
+*** TODO update tag
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       b1a1738f-0231-496e-841c-9d06a9a6de44
+    :END:
+** TODO status
+   :PROPERTIES:
+   :CREATED:  <2019-01-02 śro 14:30>
+   :ID:       bf9f0d8c-89f3-4944-9a17-499125b725d9
+   :END:
+*** TODO List statuses
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       3e8d2faf-fd52-49fc-ad16-24391e978a97
+    :END:
+*** TODO get status
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       aba89394-3d44-410b-b61f-92182ca9e802
+    :END:
+*** TODO add status
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       ca7fed4e-22fe-4a6b-b852-a93ff8b72c68
+    :END:
+*** TODO remove status
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       48dfd004-daf8-4c7f-9307-314881be7c45
+    :END:
+*** TODO update status
+    :PROPERTIES:
+    :ID:       0da7efea-47c8-4290-b086-3f8e8279eb80
+    :END:
+    :PROPERTIES:
+    :CREATED:  <2019-01-02 śro 14:30>
+    :ID:       9b7740e0-21a8-4f1c-97a5-b15233a05e87
+
+* TODO Connectio to org files
+  :PROPERTIES:
+  :CREATED:  <2019-01-02 śro 14:33>
+  :ID:       64a02703-03f8-4275-8f5e-bb1ae756041e
+  :END:
+* TODO Connection to habitica
+  :PROPERTIES:
+  :CREATED:  <2019-01-02 śro 14:33>
+  :ID:       f02c9b63-db51-43b6-ae58-32e236495876
+  :END:
+* TODO Connection to taskwarrior
+  :PROPERTIES:
+  :CREATED:  <2019-01-02 śro 14:33>
+  :ID:       3ee7e911-9030-4e27-8499-df26613ee219
+  :END:
+* TODO connection to trello
+  :PROPERTIES:
+  :CREATED:  <2019-01-02 śro 14:33>
+  :ID:       a3674fa8-97bf-46da-b0a0-bcc74de8f373
+  :END:
