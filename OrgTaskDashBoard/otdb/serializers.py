@@ -25,6 +25,6 @@ class StatusSerializer(serializers.HyperlinkedModelSerializer):
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Task
-        fields = ('task', 'task_id', 'task_org_id', 'task_level',
+        fields = ('task_name', 'task_id', 'task_org_id', 'task_level',
                   'task_tags', 'task_deadline', 'task_created',
                   'task_project_id')

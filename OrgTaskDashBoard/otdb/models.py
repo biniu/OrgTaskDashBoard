@@ -24,11 +24,13 @@ class Status(models.Model):
 
 
 class Task(models.Model):
-    task = models.CharField(max_length=255)
+    task_name = models.CharField(max_length=255)
     task_id = models.IntegerField(primary_key=True)
     task_org_id = models.CharField(max_length=255)  # for org files
     task_level = models.IntegerField()
-    # task_status = ???
+    task_status = models.ForeignKey('Status',
+                                    on_delete=models.SET_DEFAULT,
+                                    default='')
     # task_priority =
     task_tags = models.ForeignKey('Tag',
                                   on_delete=models.SET_DEFAULT,
