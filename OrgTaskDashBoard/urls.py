@@ -21,7 +21,10 @@ from rest_framework import routers
 from OrgTaskDashBoard.otdb import views
 
 router = routers.DefaultRouter()
-router.register(r'project', views.ProjectViewSet)
+router.register(r'projects', views.ProjectViewSet)
+router.register(r'tags', views.TagViewSet)
+router.register(r'statuses', views.StatusViewSet)
+router.register(r'tasks', views.TaskViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
