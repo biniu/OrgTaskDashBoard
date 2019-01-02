@@ -33,6 +33,21 @@
     :CREATED:  <2019-01-02 śro 14:31>
     :ID:       58f2f141-e284-41b1-93c9-0d332653c6d0
     :END:
+**** TODO update project name
+     :PROPERTIES:
+     :ID:       a4cc83bf-1749-4d44-800d-69978525a838
+     :CREATED:  <2019-01-02 śro 14:38>
+     :END:
+**** TODO update project tags
+     :PROPERTIES:
+     :ID:       9fc064a7-b02f-4a71-826c-3665aeb9ddfc
+     :CREATED:  <2019-01-02 śro 14:38>
+     :END:
+**** TODO update project path(org file)
+     :PROPERTIES:
+     :ID:       7c754ad9-135a-4e76-987b-24ff55753e6c
+     :CREATED:  <2019-01-02 śro 14:38>
+     :END:
 ** TODO Tasks
    :PROPERTIES:
    :CREATED:  <2019-01-02 śro 14:31>
@@ -63,6 +78,46 @@
     :CREATED:  <2019-01-02 śro 14:31>
     :ID:       e0491f1a-52d9-4154-b2ad-dca24dae22a0
     :END:
+**** TODO update task name
+     :PROPERTIES:
+     :ID:       1926675d-fd8b-4192-b78a-3abbc44e7634
+     :CREATED:  <2019-01-02 śro 14:42>
+     :END:
+**** TODO update task level
+     :PROPERTIES:
+     :ID:       68c4e453-a6f7-4ba9-a63a-9c759f2b090f
+     :CREATED:  <2019-01-02 śro 14:41>
+     :END:
+**** TODO update task status
+     :PROPERTIES:
+     :ID:       955e234a-d1bb-4bf6-b05d-311072ce649b
+     :CREATED:  <2019-01-02 śro 14:41>
+     :END:
+**** TODO update task priority
+     :PROPERTIES:
+     :ID:       430fdec5-6cfb-4f14-bef2-9486ba01d180
+     :CREATED:  <2019-01-02 śro 14:41>
+     :END:
+**** TODO update task tags
+     :PROPERTIES:
+     :ID:       be022907-e1ef-490c-ac37-d8bbf83f3a58
+     :CREATED:  <2019-01-02 śro 14:41>
+     :END:
+**** TODO update task deadline
+     :PROPERTIES:
+     :ID:       fd08cf51-8850-4e3f-b4be-6c602635a8cc
+     :CREATED:  <2019-01-02 śro 14:41>
+     :END:
+**** TODO update task parent
+     :PROPERTIES:
+     :ID:       d9d351ed-fd93-4c0a-8147-7a10355fa9a7
+     :CREATED:  <2019-01-02 śro 14:41>
+     :END:
+**** TODO update task project
+     :PROPERTIES:
+     :ID:       36c1752a-9e0a-4c2f-a5da-6d1ebc89156f
+     :CREATED:  <2019-01-02 śro 14:41>
+     :END:
 ** TODO Tag
    :PROPERTIES:
    :CREATED:  <2019-01-02 śro 14:31>
