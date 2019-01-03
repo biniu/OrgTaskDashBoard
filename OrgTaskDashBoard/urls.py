@@ -16,18 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from django.urls import path
-from rest_framework import routers
 
-from OrgTaskDashBoard.otdb import views
-
-router = routers.DefaultRouter()
-router.register(r'projects', views.ProjectViewSet)
-router.register(r'tags', views.TagViewSet)
-router.register(r'statuses', views.StatusViewSet)
-router.register(r'tasks', views.TaskViewSet)
+from OrgTaskDashBoard.otdb import urls as otdb_urls
 
 urlpatterns = [
+    url(r'^', include(otdb_urls)),
+
     path('admin/', admin.site.urls),
-    url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
