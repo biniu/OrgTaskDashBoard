@@ -83,10 +83,17 @@ WSGI_APPLICATION = 'OrgTaskDashBoard.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'dbmongodb',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'djongo',
+#        'NAME': 'dbmongodb',
+#    }
+#}
 
 
 # Password validation
