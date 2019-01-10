@@ -9,7 +9,8 @@ class Project(models.Model):
     project_id = models.IntegerField(primary_key=True)
     project_tags = models.ForeignKey('Tag',
                                      on_delete=models.SET_DEFAULT,
-                                     default='')
+                                     default=None,
+                                     null=True)
     file_path = models.CharField(max_length=255)
 
 
@@ -30,14 +31,17 @@ class Task(models.Model):
     task_level = models.IntegerField()
     task_status = models.ForeignKey('Status',
                                     on_delete=models.SET_DEFAULT,
-                                    default='')
+                                    default=None,
+                                     null=True)
     # task_priority =
     task_tags = models.ForeignKey('Tag',
                                   on_delete=models.SET_DEFAULT,
-                                  default='')
+                                  default=None,
+                                  null=True)
     task_deadline = models.DateField()
     task_created = models.DateField()
     # task_parent = ???
     task_project_id = models.ForeignKey('Project',
                                         on_delete=models.SET_DEFAULT,
-                                        default='')
+                                        default=None,
+                                        null=True)
